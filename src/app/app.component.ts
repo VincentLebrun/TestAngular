@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Selfie à wookie';
   subTitle = 'Voyons ce que celà fait ';
+  logoAffiche = true;
+  lesSelfies:string[] = ['test1 ', "test2"] 
 }
