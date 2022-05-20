@@ -1,11 +1,11 @@
 import { Wookie } from "./wookie";
 
 /**
- * Class for wookie selfiue
+ * Class for wookie selfie
  */
 export class Selfie {
    
-    image : string | undefined;
+    image?: string ;
     wookie : Wookie;
     
     constructor(){
