@@ -1,8 +1,15 @@
+<!-- voici comment appeler un component d'abord aller le chercher dans par exemple menu-general-component et le mettre en
+balise-->
+<app-menu-general></app-menu-general>
 <h1>{{title}}</h1>
 <h2>{{subTitle}}</h2>
-<img *ngIf="logoAffiche"
+<img *ngIf="logoAffiche ; else contraireIf"
   src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.XAkA8Lnk3_FXx8uy-AR6vgHaHa%26pid%3DApi&f=1"
   alt="">
+<ng-template #contraireIf>
+  <b>Pas d'image</b>
+</ng-template>
+
 <ul>
   <li *ngFor="let unSelfie of lesSelfies">{{unSelfie.wookie.name}}</li>
 </ul>
