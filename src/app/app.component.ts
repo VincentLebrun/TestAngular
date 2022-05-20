@@ -7,11 +7,8 @@ import { Selfie } from './models/selfie';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  console = console;
   title = 'Selfie à wookie';
   subTitle = 'Voyons ce que celà fait ';
   logoAffiche = true;
-  lesSelfies:Selfie[] = [
-    {image: '' , wookie : {name :"cheh", selfies:[]}},
-    {image: '' , wookie : {name :"cheh 2 ", selfies:[]}}
-  ] ;
 }

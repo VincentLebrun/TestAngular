@@ -3,11 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { MenuGeneralComponent } from './shared/component/menu-general/menu-general.component';
+import { FooterComponent } from './shared/component/footer/footer.component';
+import { SelfieListComponent } from './features/selfies/selfie-list/selfie-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuGeneralComponent
+    MenuGeneralComponent,
+    FooterComponent,
+    SelfieListComponent,
+
   ],
   imports: [
     BrowserModule
