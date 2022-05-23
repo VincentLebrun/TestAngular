@@ -11,4 +11,9 @@ export class AppComponent {
   title = 'Selfie à Pigeon';
   subTitle = 'Voyons ce que celà fait ';
   logoAffiche = true;
+  fieldValue = "";
+  searchSelfies(value: string) {
+    console.log('toto', value);
+    this.fieldValue = value;
+  }
 }
