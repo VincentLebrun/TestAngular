@@ -8,8 +8,8 @@ import { Selfie } from 'src/app/models/selfie';
 })
 export class SelfieListComponent implements OnInit {
   lesSelfies:Selfie[] = [
-    {image: '' , wookie : {name :"cheh", selfies:[]}},
-    {image: '' , wookie : {name :"cheh 2 ", selfies:[]}}
+    {image: '' ,title:"Sacré beau pigeon", wookie : {name :"cheh", selfies:[]}},
+    {image: '' ,title: "encore un ", wookie : {name :"cheh 2 ", selfies:[]}}
   ] ;
   constructor() { }
 
