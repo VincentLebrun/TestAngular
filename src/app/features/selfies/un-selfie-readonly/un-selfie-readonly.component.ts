@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Selfie } from 'src/app/models/selfie';
 
 @Component({
   selector: 'app-un-selfie-readonly',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./un-selfie-readonly.component.css']
 })
 export class UnSelfieReadonlyComponent implements OnInit {
-
+  /**Si l'on passe en argument un tableau [ici dans selfie list]
+   *  il faut venir
+   *  l'initialiser avec l'annotation @Input
+  **/
+  @Input()
+  public unSelfie : Selfie = null ;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(){
   }
 
 }
