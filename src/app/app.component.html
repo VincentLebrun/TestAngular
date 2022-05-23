@@ -1,6 +1,6 @@
 <!-- voici comment appeler un component d'abord aller le chercher dans par exemple menu-general-component et le mettre en
 balise-->
-<app-menu-general></app-menu-general>
+<app-menu-general (research)="searchSelfies($event)"></app-menu-general>
 <h1>{{title}}</h1>
 <h2>{{subTitle}}</h2>
 <img *ngIf="logoAffiche ; else contraireIf"
@@ -10,5 +10,5 @@ balise-->
   <b>Pas d'image</b>
 </ng-template>
 
-<app-selfie-list></app-selfie-list>
+<app-selfie-list [filter]="fieldValue"></app-selfie-list>
 <app-footer></app-footer>
