@@ -8,7 +8,7 @@ import { Selfie } from './models/selfie';
 })
 export class AppComponent {
   console = console;
-  title = 'Selfie à wookie';
+  title = 'Selfie à Pigeon';
   subTitle = 'Voyons ce que celà fait ';
   logoAffiche = true;
 }
