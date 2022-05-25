@@ -6,6 +6,7 @@ import { MenuGeneralComponent } from './shared/component/menu-general/menu-gener
 import { FooterComponent } from './shared/component/footer/footer.component';
 import { SelfieListComponent } from './features/selfies/selfie-list/selfie-list.component';
 import { UnSelfieReadonlyComponent } from './features/selfies/un-selfie-readonly/un-selfie-readonly.component';
+import { LoggerService } from './shared/services/logger/logger.service';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { UnSelfieReadonlyComponent } from './features/selfies/un-selfie-readonly
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    LoggerService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
