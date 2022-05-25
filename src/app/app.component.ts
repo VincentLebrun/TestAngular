@@ -13,11 +13,12 @@ export class AppComponent {
   subTitle = 'Voyons ce que celà fait ';
   logoAffiche = true;
   fieldValue = "";
-  constructor(private loggerService: LoggerService) {
+  constructor(private _loggerService: LoggerService = null) {
 
   }
+
   searchSelfies(value: string) {
-    this.loggerService.log('toto', value);
+    this._loggerService.log('toto', value);
     this.fieldValue = value;
   }
 }
