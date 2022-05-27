@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MenuGeneralComponent } from './shared/component/menu-general/menu-general.component';
 import { FooterComponent } from './shared/component/footer/footer.component';
@@ -19,7 +19,8 @@ import { LoggerService } from './shared/services/logger/logger.service';
 
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
     LoggerService
