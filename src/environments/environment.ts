@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apis: {
     selfies: {
-      url: 'http://localhost:8080',
+      url: 'http://localhost:8080/user',
 
     }
   }
