@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Selfie } from 'src/app/models/selfie';
 import { LoggerService } from 'src/app/shared/services/logger/logger.service';
 import { SelfieService } from 'src/app/shared/services/selfies/selfie.service';
@@ -8,9 +9,13 @@ import { SelfieService } from 'src/app/shared/services/selfies/selfie.service';
   templateUrl: './selfie-list.component.html',
   styleUrls: ['./selfie-list.component.css']
 })
-export class SelfieListComponent implements OnInit {
+export class SelfieListComponent implements OnInit, OnDestroy {
+  _subscription: Subscription[] = [];
   constructor(private _loggerService: LoggerService, private _selfieService: SelfieService) {
 
+  }
+  ngOnDestroy(): void {
+    this._subscription.forEach(item => item.unsubscribe());
   }
   lesSelfies: Selfie[] = [
     { image: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fanimal.memozee.com%2FArchOLD-7%2F1193645414.jpg&f=1&nofb=1', title: "Sacré beau pigeon", wookie: { name: "cheh", selfies: [] } },
@@ -23,7 +28,10 @@ export class SelfieListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.lesSelfies = this._selfieService.getAll();
+    //this.lesSelfies = this._selfieService.getAll();
+
+    const sub = this._selfieService.getAll_asObservable().subscribe(myTab => this.lesSelfies = myTab);
+    this._subscription.push(sub);
   }
 
 }
