@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Selfie } from 'src/app/models/selfie';
 import { Wookie } from 'src/app/models/wookie';
 
@@ -20,7 +21,7 @@ export class SelfieService {
     const tab: Selfie[] = [];
     let selfie = new Selfie;
     selfie.image = "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fanimal.memozee.com%2FArchOLD-7%2F1193645414.jpg&f=1&nofb=1";
-    selfie.title = 'Yata';
+    selfie.title = 'Sacré beau pigeon ';
     selfie.wookie = new Wookie();
     selfie.wookie.name = "Pigeon";
     tab.push(selfie);
@@ -34,5 +35,9 @@ export class SelfieService {
     })
     return tab;
 
+  }
+  getAll_asObservable(): Observable<Selfie[]> {
+    const myTab = this.getAll();
+    return of(myTab);
   }
 }
